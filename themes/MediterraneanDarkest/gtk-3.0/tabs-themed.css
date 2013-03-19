@@ -1,0 +1,55 @@
+/*****************
+ * tabs themed   *
+ *****************/
+@define-color theme_tab_bg_color mix (@theme_base_color, @theme_selected_bg_color, 0.92);
+
+.notebook tab {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_tab_bg_color, 1.10)),
+                                     color-stop (0.48, shade(@theme_tab_bg_color, 1.06)),
+                                     color-stop (0.52, shade(@theme_tab_bg_color, 0.95)),
+                                     to (shade(@theme_tab_bg_color, 0.91)));
+
+    border-width: 1px;
+    border-style: solid; 
+	border-radius: 0px;
+	border-color:       shade(@theme_tab_bg_color, 0.80);
+    border-top-color: 	shade(@theme_tab_bg_color, 0.85);
+    border-left-color: 	shade(@theme_tab_bg_color, 0.80);
+    border-right-color: shade(@theme_tab_bg_color, 0.80);
+	border-image: none;
+
+    box-shadow: inset  0px  1px alpha(#eee, 0.1),
+                inset  1px  0px alpha(#eee, 0.1),
+                inset -1px  0px alpha(#eee, 0.1); 
+}
+
+.notebook tab:active {
+     background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_tab_bg_color, 0.73)),
+                                     to   (shade(@theme_tab_bg_color, 0.85)));
+
+	border-color: shade(@theme_tab_bg_color, 0.50);
+    border-top-color: 	shade(@theme_tab_bg_color, 0.45);
+    border-left-color: 	shade(@theme_tab_bg_color, 0.55);
+    border-right-color: shade(@theme_tab_bg_color, 0.55);
+	border-image: none;
+    box-shadow: inset  0px  3px alpha(#000, 0.03),
+				inset  0px  2px alpha(#000, 0.03),
+				inset  0px  1px alpha(#000, 0.03),
+                inset  2px  0px alpha(#000, 0.03),
+                inset  1px  0px alpha(#000, 0.05),
+                inset -2px  0px alpha(#000, 0.03),
+                inset -1px  0px alpha(#000, 0.05);
+	
+}
+
+.notebook tab,
+.notebook tab GtkLabel {
+	color: @theme_selected_fg_color;
+	text-shadow: 1px 1px @theme_selected_shadow_color;
+}
+
+
