@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/arjen/repositories/Sight/src/__pycache__'
+let g:netrw_dirhist_2='/home/arjen/repositories/myapp/app/styles'
+let g:netrw_dirhist_3='/home/arjen/repositories/occator/src/server/config'
+let g:netrw_dirhist_4='/home/arjen/repositories/occator/src/server/conf/locale'
+let g:netrw_dirhist_5='/home/arjen/repositories/occator/src/server/templates/pbatch/detail_modules'
+let g:netrw_dirhist_6='/home/arjen/Downloads/bla/DCSC Thesis Style/STYLESTUFF'
+let g:netrw_dirhist_7='/home/arjen/bin'
+let g:netrw_dirhist_8='/home/arjen/.config'
+let g:netrw_dirhist_9='/home/arjen/configuration'
