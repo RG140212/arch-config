@@ -15,7 +15,7 @@ bindkey -M vicmd '/' history-incremental-pattern-search-backward
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/arjen/.zshrc'
+zstyle :compinstall filename '/home/$USER/.zshrc'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
