@@ -14,10 +14,13 @@ fi
 # reload X settings
 xrdb -merge ~/.Xresources &
 
-# set wallpaper
-feh --bg-scale ~/Pictures/wallpaper.jpg &
-
 # start network manager applet
 nm-applet &
+
+# Clipboard
+parcellite -d -n &
+
+# set wallpaper
+exec feh --bg-scale ~/Pictures/wallpaper.jpg &
 
 exec i3
