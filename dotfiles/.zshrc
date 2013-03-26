@@ -47,7 +47,7 @@ alias reboot='sudo reboot'
 alias halt='sudo halt'
 
 # misc aliases
-alias gt='urxvt'
+alias ct='urxvt >3 &'
 alias django='python manage.py'
 alias watch.py='python ~/bin/watch.py'
 
