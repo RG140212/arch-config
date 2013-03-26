@@ -67,3 +67,7 @@ export PROMPT="
 
 # env
 PYTHONDONTWRITEBYTECODE=1
+
+if [ -x /usr/bin/gem ]; then
+	export PATH=$PATH:/home/$USER/.gem/ruby/1.9.1/bin
+fi
