@@ -29,13 +29,22 @@ alias gt='urxvt'
 alias django='python manage.py'
 alias watch.py='python ~/bin/watch.py'
 
-# git aliasses
+# git aliases
 alias gits='git status'
 alias gitd='git diff'
 alias gitc='git checkout'
 alias gitdc='git diff --cached'
 alias gitca='git commit --amend'
 alias gitap='git add -p'
+
+# system aliases
+alias reboot='sudo reboot'
+alias halt='sudo halt'
+
+# misc aliases
+alias ct='urxvt -cd `pwd` &'
+alias django='python manage.py'
+alias watch.py='python ~/bin/watch.py'
 
 function gvimrt {
 	gvim --remote-tab $1
