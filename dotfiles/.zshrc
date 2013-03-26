@@ -25,7 +25,6 @@ compinit
 
 alias ls='ls --color=auto'
 alias lc='ls -lh --color --group-directories-first'
-alias gt='urxvt'
 alias django='python manage.py'
 alias watch.py='python ~/bin/watch.py'
 
@@ -42,7 +41,7 @@ alias reboot='sudo reboot'
 alias halt='sudo halt'
 
 # misc aliases
-alias ct='urxvt -cd `pwd` &'
+alias gt='urxvt'
 alias django='python manage.py'
 alias watch.py='python ~/bin/watch.py'
 
