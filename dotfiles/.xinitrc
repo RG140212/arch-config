@@ -17,8 +17,6 @@ xrdb -merge ~/.Xresources &
 # start network manager applet
 nm-applet &
 
-# Clipboard
-parcellite -d -n &
 
 # set wallpaper
 exec feh --bg-scale ~/Pictures/wallpaper.jpg &
