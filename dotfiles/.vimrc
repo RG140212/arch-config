@@ -33,7 +33,7 @@ set backupdir=~/.vim/backup
 set iskeyword-=_
 
 set background=dark
-set gfn=Inconsolata\ Medium\ 10
+set gfn=Inconsolata\ Medium\ 11
 
 " let g:solarized_termcolors = 256
 colorscheme solarized

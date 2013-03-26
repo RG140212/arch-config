@@ -67,13 +67,13 @@
 *color15:                 S_base3
 
 ! urxvt settings
-URxvt.font: xft:Inconsolata:size=8
+URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
 
 ! dzen settings
 dmenu.background:		#333333
-dmenu.foreground:		#999999
-dmenu.font:				xft:Ubuntu:size=7
+dmenu.foreground:		S_base2
+dmenu.font:				xft:Ubuntu:size=8
 
 dzen2.background:		#333333
 dzen2.foreground:		#999999

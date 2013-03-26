@@ -1,4 +1,4 @@
-export HISTSIZE=2000
+export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
@@ -9,9 +9,11 @@ setopt share_history
 unsetopt autocd beep extendedglob nomatch notify
 
 # vim mode
-bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
+#bindkey -v
+#bindkey -M viins 'jj' vi-cmd-mode
+#bindkey -M vicmd '/' history-incremental-pattern-search-backward
+# emacs mode
+bindkey -e
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -23,10 +25,11 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 autoload -Uz compinit
 compinit
 
-alias ls='ls --color=auto'
-alias lc='ls -lh --color --group-directories-first'
-alias django='python manage.py'
-alias watch.py='python ~/bin/watch.py'
+# directory listing aliases
+alias ls='ls --color=auto --group-directories-first'
+alias lc='ls -lh'
+alias la='ls -lha'
+alias l='ls'
 
 # git aliases
 alias gits='git status'
@@ -61,8 +64,10 @@ function reproot {
 }
 
 autoload colors && colors
+
 export PROMPT="
- { %{$fg[blue]%}%m%{$fg[white]%}: %~%{$reset_color%} } "
+%{$fg_bold[red]%}%n%{$reset_color%}@%{$fg_bold[blue]%}%m%{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}%{$fg_bold[blue]%} % %{$reset_color%}
+	%{$fg_bold[blue]%}→ %{$reset_color%} "
 
 # env
 PYTHONDONTWRITEBYTECODE=1
