@@ -1,3 +1,6 @@
+# import script for git prompt
+source $HOME/.zshlib/git.zsh
+
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
@@ -68,6 +71,7 @@ autoload colors && colors
 export PROMPT="
 %{$fg_bold[red]%}%n%{$reset_color%}@%{$fg_bold[blue]%}%m%{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}%{$fg_bold[blue]%} % %{$reset_color%}
 	%{$fg_bold[blue]%}→ %{$reset_color%} "
+export RPROMPT=$'$(vcs_info_wrapper)'
 
 # env
 PYTHONDONTWRITEBYTECODE=1
