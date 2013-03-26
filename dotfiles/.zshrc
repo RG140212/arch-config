@@ -49,7 +49,7 @@ function up {
 }
 
 function reproot {
-	cd `pwd | sed 's/repositories\/\([a-z0-9A-Z]*\).*$/repositories\/\1/'`
+	cd `pwd | sed 's/repositories\/\([a-z0-9A-Z\_\.\-]*\).*$/repositories\/\1/'`
 }
 
 autoload colors && colors
