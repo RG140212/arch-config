@@ -26,6 +26,12 @@ hsetroot -solid "#000000"
 # for shadow and opacity in X.org
 xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 
+# Start the VirtualBox sharing services
+VBoxClient-all &
+
+# Keymapping
+xmodmap -e "keycode 96 = Insert Insert"
+
 # set wallpaper
 exec feh --bg-scale ~/Pictures/wallpaper.jpg &
 
