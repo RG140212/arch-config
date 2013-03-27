@@ -17,8 +17,10 @@ xrdb -merge ~/.Xresources &
 # start network manager applet
 nm-applet &
 
-
 # set wallpaper
 exec feh --bg-scale ~/Pictures/wallpaper.jpg &
+
+# use xbindkeys
+xbindkeys
 
 exec i3

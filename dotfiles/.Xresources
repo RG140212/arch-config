@@ -69,6 +69,9 @@
 ! urxvt settings
 URxvt.font: xft:Inconsolata:size=8
 URxvt.scrollBar: false
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.perl-ext-common: default,clipboard
 
 ! dzen settings
 dmenu.background:		#333333
