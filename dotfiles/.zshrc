@@ -22,7 +22,7 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/$USER/.zshrc'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*:warnings' format '%BNo matches for: %d%b'
 
 # init completion
 autoload -Uz compinit
