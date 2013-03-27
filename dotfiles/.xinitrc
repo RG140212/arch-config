@@ -20,4 +20,7 @@ feh --bg-scale ~/Pictures/wallpaper.jpg &
 # start network manager applet
 nm-applet &
 
+# use xbindkeys
+xbindkeys
+
 exec i3
