@@ -6,16 +6,18 @@ setopt inc_append_history
 setopt share_history
 
 # disable annoying stuff
-unsetopt autocd beep extendedglob nomatch notify
+unsetopt autocd beep nomatch notify
 
 # vim mode
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
+bindkey -M viins '^r' history-incremental-pattern-search-backward
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/$USER/.zshrc'
+setopt extendedglob
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
