@@ -71,6 +71,9 @@ URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
 URxvt*iso14755: false
 URxvt*termName: rxvt-unicode
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 
 ! dzen settings
 dmenu.background:		#333333
