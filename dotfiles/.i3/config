@@ -23,16 +23,26 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run -b -h 80 -y 525 -nb \#073642 -nf \#DDDDDD -sb \#859900 -sf \#FFFFFF
+bindsym $mod+r exec --no-startup-id dmenu_run -dim 0.4 -o 0.8 -b -h 80 -y 525 -nb \#073642 -nf \#DDDDDD -sb \#268bd2 -sf \#FFFFFF
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# bind apps to tags
-assign [class="Chromium"] 1: Web
-assign [class="Spotify"] 4: Music
-assign [class="Evince"] 5: Docs
+# declare workspace names
+set $ws1 1: Web
+set $ws2 2: Shell
+set $ws3 3: Editor
+set $ws4 4: Media
+set $ws5 5: Docs
+
+# bind apps to application classes
+assign [class="Chromium"] $ws1
+assign [class="Gvim"] $ws3
+assign [class="Spotify"] $ws4
+assign [class="Vlc"] $ws4
+assign [class="feh"] $ws5
+assign [class="Evince"] $ws5
 
 # change focus
 bindsym $mod+h focus left
@@ -47,7 +57,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+d split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -70,13 +80,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
-set $ws1 1: Web
-set $ws2 2: Shell
-set $ws3 3: Editor
-set $ws4 4: Music
-set $ws5 5: Docs
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -131,6 +136,7 @@ mode "jump" {
 	bindsym s [class="Spotify"] focus
 	bindsym g [class="Gvim"] focus
 	bindsym c [class="Chromium"] focus
+	bindsym v [class="Vlc"] focus
 
 	# back to normal: Enter or Escape
 	bindsym Escape mode "default"
@@ -151,12 +157,12 @@ bar {
 	font pango:Inconsolata 10
 	colors {
         background #002B36
-        statusline #2aa198
+        statusline #4DBDB4
 
-        focused_workspace  	#859900 #859900 #FFFFFF
-        inactive_workspace 	#073642 #073642 #DDDDDD
-        active_workspace	#073642 #073642 #DDDDDD
-        urgent_workspace	#073642 #073642 #DDDDDD
+        focused_workspace  	#07558C #268bd2 #FFFFFF
+        inactive_workspace 	#073642 #073642 #BBBBBB
+        active_workspace	#073642 #073642 #BBBBBB
+        urgent_workspace	#073642 #073642 #BBBBBB
     }
 }
 
