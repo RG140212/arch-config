@@ -69,6 +69,8 @@
 ! urxvt settings
 URxvt.font: xft:Inconsolata:size=10
 URxvt.scrollBar: false
+URxvt*iso14755: false
+URxvt*termName: rxvt-unicode
 
 ! dzen settings
 dmenu.background:		#333333
