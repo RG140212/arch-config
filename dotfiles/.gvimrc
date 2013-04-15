@@ -1,2 +1,7 @@
+" simplify gViM ui
+set guioptions-=m "remove menu bar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scroll bar
+set guioptions-=M "don't load the menu script
+
 filetype plugin on
-set gfn=Inconsolata\ Medium\ 8.5
