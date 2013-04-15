@@ -1,4 +1,4 @@
-syntax enable
+syntax on
 
 " Automatically cd into the directory that the file is in
 set autochdir
@@ -13,6 +13,18 @@ set autoindent
 set smartindent
 
 set number
+
+set statusline=%F       "full path of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+"set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+"set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
 
 " always show the statusline
 set laststatus=2
@@ -33,7 +45,7 @@ set backupdir=~/.vim/backup
 set iskeyword-=_
 
 set background=dark
-set gfn=Inconsolata\ Medium\ 10
+set gfn=Inconsolata\ Medium\ 11
 
 " let g:solarized_termcolors = 256
 colorscheme solarized
@@ -51,5 +63,5 @@ set hlsearch
 set nohidden
 
 augroup filetypedetect
-  au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
+	au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
 augroup END
