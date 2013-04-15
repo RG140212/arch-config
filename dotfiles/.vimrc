@@ -1,4 +1,4 @@
-syntax enable
+syntax on
 
 " Automatically cd into the directory that the file is in
 set autochdir
@@ -63,5 +63,5 @@ set hlsearch
 set nohidden
 
 augroup filetypedetect
-  au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
+	au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
 augroup END
