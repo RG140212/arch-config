@@ -1,3 +1,6 @@
+
+set gfn=Inconsolata\ Medium\ 10
+
 " simplify gViM ui
 set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
