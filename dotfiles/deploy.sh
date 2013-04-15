@@ -8,4 +8,5 @@ cp -r	.i3 \
 		.Xresources \
 		.zprofile \
 		.zshrc \
+		.xbindkeysrc \
 		~
