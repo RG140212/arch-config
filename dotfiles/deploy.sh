@@ -1,7 +1,7 @@
 #!/bin/bash
 cp -r	.i3 \
 		.vim \
-		.zshlib \
+		.zsh \
 		.gvimrc \
 		.vimrc \
 		.xinitrc \
