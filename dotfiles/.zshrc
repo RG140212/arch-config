@@ -1,8 +1,8 @@
 #------------------------------
 # Import scripts
 #------------------------------
-source $HOME/.zshlib/git.zsh
-source $HOME/.zshlib/completion.zsh
+source $HOME/.zsh/git.zsh
+source $HOME/.zsh/completion.zsh
 
 #------------------------------
 # Variables
