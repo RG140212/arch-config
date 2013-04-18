@@ -5,31 +5,16 @@ source $HOME/.zsh/git.zsh
 source $HOME/.zsh/completion.zsh
 
 #------------------------------
-# Variables
-#------------------------------
-export BROWSER="chromium"
-export EDITOR="vim"
-export PYTHONDONTWRITEBYTECODE=1
-if [ -x /usr/bin/gem ]; then
-	export PATH=$PATH:${HOME}/.gem/ruby/1.9.1/bin:${HOME}/.gem/ruby/2.0.0
-fi
-
-#------------------------------
-# History options
-#------------------------------
-export HISTSIZE=100000
-export HISTFILE="$HOME/.history"
-export SAVEHIST=$HISTSIZE
-setopt hist_ignore_all_dups
-setopt inc_append_history
-setopt share_history
-
-#------------------------------
-# Enable and disable options
+# (En|Dis)able common options
 #------------------------------
 unsetopt autocd beep nomatch notify
 
-setopt extendedglob # autocomplete with regex
+# ignore duplicates in history
+setopt hist_ignore_all_dups
+
+# parallel history across terminal sesions
+setopt inc_append_history
+setopt share_history
 
 #------------------------------
 # Keybindings
