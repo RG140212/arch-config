@@ -74,6 +74,8 @@ URxvt*termName: rxvt-unicode
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.perl-ext-common: default,clipboard
 
 ! dzen settings
 dmenu.background:		#333333
