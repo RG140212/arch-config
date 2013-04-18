@@ -53,6 +53,10 @@ alias lc='ls -lh'
 alias la='ls -lha'
 alias l='ls'
 
+# handy global aliasses
+alias -g '...'='../../'
+alias -g '....'='../../../'
+
 # git aliases
 alias gits='git status'
 alias gitd='git diff'
