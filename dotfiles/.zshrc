@@ -37,12 +37,25 @@ setopt extendedglob # autocomplete with regex
 # navigation mode (-e for emacs, -v for vim)
 bindkey -v
 
-# bind common vim commands to urxvt
+# leave expansion to _expand
+bindkey '^I' complete-word
+
 bindkey -M viins 'jj' vi-cmd-mode
+
+# vi mode with emacs behaviour
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M viins '^r' history-incremental-pattern-search-backward
-bindkey -M viins '^?' backward-delete-char # vim style backspace behavior
-bindkey -M viins '^U' backward-kill-line
+bindkey '^[[Z' reverse-menu-complete
+
+# vim-style behaviour
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^u' backward-kill-line
+bindkey -M vicmd 'u' undo
+bindkey -M vicmd '^R' redo
+bindkey -M vicmd '^R' redo
+
+# keybinding to prepend 'sudo' to command
+bindkey -M vicmd -s 'T' '^[ Isudo ^[A'
 
 #------------------------------
 # Aliases
