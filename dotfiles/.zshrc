@@ -7,14 +7,14 @@ source $HOME/.zsh/completion.zsh
 #------------------------------
 # (En|Dis)able common options
 #------------------------------
-unsetopt autocd beep nomatch notify
+unsetopt AUTOCD BEEP NOMATCH NOTIFY
 
 # ignore duplicates in history
-setopt hist_ignore_all_dups
+setopt HIST_IGNORE_ALL_DUPS
 
-# parallel history across terminal sesions
-setopt inc_append_history
-setopt share_history
+# parallel history across terminal sessions
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 #------------------------------
 # Keybindings
