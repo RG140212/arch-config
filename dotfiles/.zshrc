@@ -49,7 +49,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # init completion
 autoload -Uz compinit
 compinit
->>>>>>> Enabled more completion options
 
 # ignore duplicates in history
 setopt HIST_IGNORE_ALL_DUPS
