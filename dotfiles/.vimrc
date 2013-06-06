@@ -1,10 +1,14 @@
+" enable syntax highlighting
 syntax on
 
-" Automatically cd into the directory that the file is in
+" enable plugins for filetypes
+filetype plugin on
+
+" automatically cd into the directory that the file is in
 set autochdir
 
-set sw=4
-set ts=4
+set shiftwidth=4
+set tabstop=4
 
 set autoindent
 set smartindent
@@ -28,7 +32,22 @@ set laststatus=2
 
 " don't remove indent on #
 inoremap # X<BS>#
+" vim style command-mode shortcut
 inoremap jj <ESC>
+
+" easier tabbing in insert mode
+inoremap <C-s-t> <ESC>:tabprevious<Enter>i
+inoremap <C-t> <ESC>:tabnext<Enter>i
+
+" easier tabbing in cmd mode
+noremap H :tabprevious<Enter>
+noremap L :tabnext<Enter>
+
+" easier window navigation
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
 
 " do not swap "-register on visual replace put
 vnoremap p "_dP
@@ -53,12 +72,22 @@ set cursorline
 " highlight char line
 set cc=100
 
+set scrolloff=10
+
 " highlight search results
 set hlsearch
 
 " when closing tab, remove buffer
 set nohidden
 
-augroup filetypedetect
-	au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
-augroup END
+" useful functions
+function ScssToSass()
+	:%g/\t*}$/d
+	:%s/{$//
+	:%s/\vimport ['"](.*)['"]/import \1/
+	:%s/;// | %s/@include /+/
+	:%s/\v^(\s*)(\w[^/]+)(\/\/.*)/\1\3\r\1\2/
+	:%s/\v\s+$//
+endfunction
+
+command ScssToSass :exec ScssToSass()

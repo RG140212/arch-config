@@ -9,6 +9,10 @@ source $HOME/.zsh/completion.zsh
 #------------------------------
 unsetopt AUTOCD BEEP NOMATCH NOTIFY
 
+export HISTSIZE=10000
+export HISTFILE="${HOME}/.history"
+export SAVEHIST=$HISTSIZE
+
 # ignore duplicates in history
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -62,6 +66,12 @@ alias gitc='git checkout'
 alias gitdc='git diff --cached'
 alias gitca='git commit --amend'
 alias gitap='git add -p'
+function gitpl {
+	git pull origin `git branch | grep \* | sed 's/\* //'`
+}
+function gitps {
+	git push origin `git branch | grep \* | sed 's/\* //'`
+}
 
 # system aliases
 alias reboot='sudo reboot'
@@ -78,9 +88,28 @@ alias vimr="vim --servername VIMREMOTE --remote-silent"
 alias gvimrt="gvim --servername GVIMREMOTE --remote-tab-silent"
 alias vimrt="vim --servername VIMREMOTE --remote-tab-silent"
 
+# cd aliases
+alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
+
 #------------------------------
 # Useful functions
 #------------------------------
+# open vim using a server name for future reference
+function vim {
+	if [ -z $2 ]
+	then
+		# oke this looks convoluted, let's explain:
+		# we ask i3 for the desktop number and let this be the server name per default
+		# such that per default, we open a file on the same space as the terminal we open it from
+		2=`i3-msg --type get_workspaces | python -c \
+			"import sys; import json; print( list( filter( lambda w:\
+			w[ 'visible' ], json.loads( sys.stdin.read() )))[0][ 'num' ])"`
+	fi
+
+	echo $2
+	urxvt -e vim --servername $2 --remote-tab-silent $1 &> /dev/null &
+}
+
 function up {
 	for a in {1..$1}
 	do
@@ -90,6 +119,10 @@ function up {
 
 function reproot {
 	cd `pwd | sed 's/repositories\/\([a-z0-9A-Z\_\.\-]*\).*$/repositories\/\1/'`
+}
+
+function tex-watch {
+	watch.py . tex "rubber -d $1"
 }
 
 #------------------------------
