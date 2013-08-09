@@ -39,10 +39,10 @@ set $ws5 5: Media
 # bind apps to application classes
 assign [class="Chromium"] $ws1
 assign [class="Gvim"] $ws3
-assign [class="Spotify"] $ws5
-assign [class="Vlc"] $ws5
 assign [class="feh"] $ws4
 assign [class="Evince"] $ws4
+assign [class="Spotify"] $ws5
+assign [class="Vlc"] $ws5
 
 # change focus
 bindsym $mod+h focus left
