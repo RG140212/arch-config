@@ -67,7 +67,7 @@
 *color15:                 S_base3
 
 ! urxvt settings
-URxvt.font: xft:Inconsolata:size=10
+URxvt.font: xft:Inconsolata:size=11
 URxvt.scrollBar: false
 URxvt*iso14755: false
 URxvt*termName: rxvt-unicode
@@ -80,8 +80,8 @@ URxvt.perl-ext-common: default,clipboard
 ! dzen settings
 dmenu.background:		#333333
 dmenu.foreground:		S_base2
-dmenu.font:				xft:Ubuntu:size=8
+dmenu.font:				xft:Ubuntu:size=10
 
 dzen2.background:		#333333
 dzen2.foreground:		#999999
-dzen2.font:				xft:Ubuntu:size=7
+dzen2.font:				xft:Ubuntu:size=8
