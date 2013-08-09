@@ -66,6 +66,7 @@ set backupdir=~/.vim/backup
 
 " recognize _ as a word boundary
 set iskeyword-=_
+set iskeyword-=:
 
 set background=dark
 set gfn=Inconsolata\ Medium\ 11
