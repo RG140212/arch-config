@@ -30,6 +30,27 @@ set laststatus=2
 inoremap # X<BS>#
 inoremap jj <ESC>
 
+" easier tabbing in insert mode
+inoremap <C-s-t> <ESC>:tabprevious<Enter>i
+inoremap <C-t> <ESC>:tabnext<Enter>i
+
+" easier tabbing in cmd mode
+noremap H :tabprevious<Enter>
+noremap L :tabnext<Enter>
+
+" easier window navigation
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+
+" I like to forget to visually select the line when using gq to format a single line
+noremap gq Vgq
+
+" additionally it would be nice to remove double spaces
+" after the paragraph is collapsed
+vnoremap gq gq gv <Esc>:'<,'>s/  / /g<Enter>:noh<Enter>
+
 " do not swap "-register on visual replace put
 vnoremap p "_dP
 
