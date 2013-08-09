@@ -149,13 +149,6 @@ function open {
 	else
 		xdg-open $FILE &>/dev/null &
 	fi
-<<<<<<< HEAD
-=======
-=======
-function open {
-	xdg-open $1 &>/dev/null&
->>>>>>> 644f2d4... Changed vim command to v, so that regular vim is still available
->>>>>>> master
 }
 
 #------------------------------
