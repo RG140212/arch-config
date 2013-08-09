@@ -33,16 +33,16 @@ bindsym $mod+r exec --no-startup-id dmenu_run -dim 0.4 -o 0.8 -b -h 80 -y 525 -n
 set $ws1 1: Web
 set $ws2 2: Shell
 set $ws3 3: Editor
-set $ws4 4: Media
-set $ws5 5: Docs
+set $ws4 4: Docs
+set $ws5 5: Media
 
 # bind apps to application classes
 assign [class="Chromium"] $ws1
 assign [class="Gvim"] $ws3
-assign [class="Spotify"] $ws4
-assign [class="Vlc"] $ws4
-assign [class="feh"] $ws5
-assign [class="Evince"] $ws5
+assign [class="Spotify"] $ws5
+assign [class="Vlc"] $ws5
+assign [class="feh"] $ws4
+assign [class="Evince"] $ws4
 
 # change focus
 bindsym $mod+h focus left
