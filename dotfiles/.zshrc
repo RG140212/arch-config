@@ -92,6 +92,32 @@ function reproot {
 	cd `pwd | sed 's/repositories\/\([a-z0-9A-Z\_\.\-]*\).*$/repositories\/\1/'`
 }
 
+function tex-watch {
+	watch.py . tex "rubber -d $1"
+}
+
+# open any file specified in $XDG_DATA_HOME/applications/mimeapps.list
+function open {
+	FILE=$1
+	VERBOSE=false
+
+	while getopts "v" OPT
+	do
+		case $OPT in
+			v)
+				VERBOSE=true
+				FILE=$2
+				;;
+		esac
+	done
+
+	if $VERBOSE; then
+		xdg-open $FILE
+	else
+		xdg-open $FILE &>/dev/null &
+	fi
+}
+
 #------------------------------
 # ZSH prompt
 #------------------------------
