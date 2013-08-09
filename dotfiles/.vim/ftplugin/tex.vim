@@ -1,9 +1,12 @@
-set spell
+filetype plugin indent on
+
+set spl=nl
 
 set shiftwidth=2
 set tabstop=2
 set iskeyword+=:
 set tw=100
+set cc=100
 
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 set grepprg=grep\ -nH\ $*

@@ -36,6 +36,17 @@ bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M viins '^r' history-incremental-pattern-search-backward
 bindkey '^[[Z' reverse-menu-complete
 
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/$USER/.zshrc'
+setopt extendedglob
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+# init completion
+autoload -Uz compinit
+compinit
+
 # vim-style behaviour
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^u' backward-kill-line
@@ -80,13 +91,6 @@ alias halt='sudo halt'
 # misc aliases
 alias ct='urxvt &'
 alias django='python manage.py'
-alias watch.py='python ~/bin/watch.py'
-
-# vim aliases
-alias gvimr="gvim --servername GVIMREMOTE --remote-silent"
-alias vimr="vim --servername VIMREMOTE --remote-silent"
-alias gvimrt="gvim --servername GVIMREMOTE --remote-tab-silent"
-alias vimrt="vim --servername VIMREMOTE --remote-tab-silent"
 
 # cd aliases
 alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
@@ -95,7 +99,7 @@ alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
 # Useful functions
 #------------------------------
 # open vim using a server name for future reference
-function vim {
+function v {
 	if [ -z $2 ]
 	then
 		# oke this looks convoluted, let's explain:
@@ -145,6 +149,13 @@ function open {
 	else
 		xdg-open $FILE &>/dev/null &
 	fi
+<<<<<<< HEAD
+=======
+=======
+function open {
+	xdg-open $1 &>/dev/null&
+>>>>>>> 644f2d4... Changed vim command to v, so that regular vim is still available
+>>>>>>> master
 }
 
 #------------------------------
