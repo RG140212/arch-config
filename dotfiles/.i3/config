@@ -23,17 +23,26 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run -b -h 80 -y 525 -nb \#073642 -nf \#DDDDDD -sb \#859900 -sf \#FFFFFF
+bindsym $mod+r exec --no-startup-id dmenu_run -dim 0.4 -o 0.8 -b -h 80 -y 525 -nb \#073642 -nf \#DDDDDD -sb \#268bd2 -sf \#FFFFFF
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# bind apps to tags
-assign [class="Spotify"] 9: music
-assign [class="Gvim"] 3: code
-assign [class="Chromium"] 2: web
-assign [class="Evince"] 4: docs
+# declare workspace names
+set $ws1 1: Web
+set $ws2 2: Shell
+set $ws3 3: Editor
+set $ws4 4: Docs
+set $ws5 5: Media
+
+# bind apps to application classes
+assign [class="Chromium"] $ws1
+assign [class="Gvim"] $ws3
+assign [class="Spotify"] $ws5
+assign [class="Vlc"] $ws5
+assign [class="feh"] $ws4
+assign [class="Evince"] $ws4
 
 # change focus
 bindsym $mod+h focus left
@@ -48,7 +57,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+d split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -71,36 +80,38 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1: misc
-bindsym $mod+2 workspace 2: web
-bindsym $mod+3 workspace 3: code
-bindsym $mod+4 workspace 4: docs
-bindsym $mod+5 workspace 5
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8: chat
-bindsym $mod+9 workspace 9: music
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: misc
-bindsym $mod+Shift+2 move container to workspace 2: web
-bindsym $mod+Shift+3 move container to workspace 3: code
-bindsym $mod+Shift+4 move container to workspace 4: docs
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+9 move container to workspace 8: chat
-bindsym $mod+Shift+0 move container to workspace 9: music
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # to other screen
 bindsym $mod+Right move workspace to output right
 bindsym $mod+Left move workspace to output left
 
 # reload the configuration file
-bindsym $mod+Shift+q reload
+bindsym $mod+Ctrl+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -125,6 +136,7 @@ mode "jump" {
 	bindsym s [class="Spotify"] focus
 	bindsym g [class="Gvim"] focus
 	bindsym c [class="Chromium"] focus
+	bindsym v [class="Vlc"] focus
 
 	# back to normal: Enter or Escape
 	bindsym Escape mode "default"
@@ -142,15 +154,15 @@ bar {
 	mode hide
 	modifier $mod
 
-	font pango:Inconsolata 11
+	font pango:Inconsolata 10
 	colors {
         background #002B36
-        statusline #2aa198
+        statusline #4DBDB4
 
-        focused_workspace  	#859900 #859900 #FFFFFF
-        inactive_workspace 	#073642 #073642 #DDDDDD
-        active_workspace	#073642 #073642 #DDDDDD
-        urgent_workspace	#073642 #073642 #DDDDDD
+        focused_workspace  	#07558C #268bd2 #FFFFFF
+        inactive_workspace 	#073642 #073642 #BBBBBB
+        active_workspace	#073642 #073642 #BBBBBB
+        urgent_workspace	#073642 #073642 #BBBBBB
     }
 }
 

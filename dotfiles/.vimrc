@@ -1,10 +1,7 @@
-syntax enable
+syntax on
 
 " Automatically cd into the directory that the file is in
 set autochdir
-
-" Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 set sw=4
 set ts=4
@@ -14,12 +11,45 @@ set smartindent
 
 set number
 
+set statusline=%F       "full path of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+"set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+"set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
 " always show the statusline
 set laststatus=2
 
 " don't remove indent on #
 inoremap # X<BS>#
 inoremap jj <ESC>
+
+" easier tabbing in insert mode
+inoremap <C-s-t> <ESC>:tabprevious<Enter>i
+inoremap <C-t> <ESC>:tabnext<Enter>i
+
+" easier tabbing in cmd mode
+noremap H :tabprevious<Enter>
+noremap L :tabnext<Enter>
+
+" easier window navigation
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
+
+" I like to forget to visually select the line when using gq to format a single line
+noremap gq Vgq
+
+" additionally it would be nice to remove double spaces
+" after the paragraph is collapsed
+vnoremap gq gq gv <Esc>:'<,'>s/  / /g<Enter>:noh<Enter>
 
 " do not swap "-register on visual replace put
 vnoremap p "_dP
@@ -31,9 +61,10 @@ set backupdir=~/.vim/backup
 
 " recognize _ as a word boundary
 set iskeyword-=_
+set iskeyword-=:
 
 set background=dark
-set gfn=Inconsolata\ Medium\ 10
+set gfn=Inconsolata\ Medium\ 11
 
 " let g:solarized_termcolors = 256
 colorscheme solarized
@@ -51,5 +82,5 @@ set hlsearch
 set nohidden
 
 augroup filetypedetect
-  au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
+	au BufNewFile,BufRead *.qml set filetype=qml syntax=qml
 augroup END
