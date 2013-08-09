@@ -81,17 +81,26 @@ alias halt='sudo halt'
 # misc aliases
 alias ct='urxvt &'
 alias django='python manage.py'
-alias watch.py='python ~/bin/watch.py'
-
-# vim aliases
-alias gvimr="gvim --servername GVIMREMOTE --remote-silent"
-alias vimr="vim --servername VIMREMOTE --remote-silent"
-alias gvimrt="gvim --servername GVIMREMOTE --remote-tab-silent"
-alias vimrt="vim --servername VIMREMOTE --remote-tab-silent"
 
 #------------------------------
 # Useful functions
 #------------------------------
+# open vim using a server name for future reference
+function v {
+	if [ -z $2 ]
+	then
+		# oke this looks convoluted, let's explain:
+		# we ask i3 for the desktop number and let this be the server name per default
+		# such that per default, we open a file on the same space as the terminal we open it from
+		2=`i3-msg --type get_workspaces | python -c \
+			"import sys; import json; print( list( filter( lambda w:\
+			w[ 'visible' ], json.loads( sys.stdin.read() )))[0][ 'num' ])"`
+	fi
+
+	echo $2
+	urxvt -e vim --servername $2 --remote-tab-silent $1 &> /dev/null &
+}
+
 function up {
 	for a in {1..$1}
 	do
@@ -127,6 +136,10 @@ function open {
 	else
 		xdg-open $FILE &>/dev/null &
 	fi
+=======
+function open {
+	xdg-open $1 &>/dev/null&
+>>>>>>> 644f2d4... Changed vim command to v, so that regular vim is still available
 }
 
 #------------------------------
