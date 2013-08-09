@@ -117,13 +117,6 @@ alias halt='sudo halt'
 # misc aliases
 alias ct='urxvt &'
 alias django='python manage.py'
-alias watch.py='python ~/bin/watch.py'
-
-# vim aliases
-alias gvimr="gvim --servername GVIMREMOTE --remote-silent"
-alias vimr="vim --servername VIMREMOTE --remote-silent"
-alias gvimrt="gvim --servername GVIMREMOTE --remote-tab-silent"
-alias vimrt="vim --servername VIMREMOTE --remote-tab-silent"
 
 # cd aliases
 alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
@@ -132,7 +125,7 @@ alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
 # Useful functions
 #------------------------------
 # open vim using a server name for future reference
-function vim {
+function v {
 	if [ -z $2 ]
 	then
 		# oke this looks convoluted, let's explain:
@@ -160,6 +153,10 @@ function reproot {
 
 function tex-watch {
 	watch.py . tex "rubber -d $1"
+}
+
+function open {
+	xdg-open $1 &>/dev/null&
 }
 
 #------------------------------
