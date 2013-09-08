@@ -5,6 +5,11 @@ source $HOME/.zsh/git.zsh
 source $HOME/.zsh/completion.zsh
 
 #------------------------------
+# Enable custom dircolors
+#------------------------------
+eval `dircolors $HOME/.dircolors`
+
+#------------------------------
 # (En|Dis)able common options
 #------------------------------
 unsetopt autocd beep nomatch notify

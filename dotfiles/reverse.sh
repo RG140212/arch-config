@@ -9,4 +9,5 @@ cp -r	~/.i3 \
 		~/.zprofile \
 		~/.zshrc \
 		~/.xbindkeysrc \
+		~/.dircolors \
 		.
