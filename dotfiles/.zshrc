@@ -77,6 +77,7 @@ alias gitap='git add -p'
 # system aliases
 alias reboot='sudo reboot'
 alias halt='sudo halt'
+alias poweroff='sudo poweroff'
 
 # misc aliases
 alias ct='urxvt &'
