@@ -11,9 +11,6 @@ done
 echo "Deploying ~/.local/bin/..."
 cp -rf -T ./bin/ ~/.local/bin/
 
-# reload X settings
-xrdb -merge ~/.Xresources &
-
 echo ""
 echo "100% done!"
 echo "Enjoy this advanced configuration, sir!"
