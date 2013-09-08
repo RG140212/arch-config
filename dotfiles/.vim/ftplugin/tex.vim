@@ -4,7 +4,6 @@ set spl=nl
 
 set shiftwidth=2
 set tabstop=2
-set iskeyword+=:
 set tw=100
 set cc=100
 
