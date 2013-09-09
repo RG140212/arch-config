@@ -6,4 +6,4 @@ Themes
 	Configure using lxappearance
 
 +	Solarized color scheme
-	Configure using `.Xresources` and `.vim/`
+	Configure using `.Xresources`, `.dircolors` and `.vim/`

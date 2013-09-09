@@ -3,6 +3,7 @@ import sys
 import os
 import subprocess
 import pyinotify
+import shlex
 
 class EventHandler( pyinotify.ProcessEvent ):
 
@@ -18,7 +19,7 @@ class EventHandler( pyinotify.ProcessEvent ):
 
 	def _cmd( self ):
 		print( ">> Executing `%s`" % self.cmd )
-		subprocess.call( self.cmd.split( ' ' ))
+		subprocess.call( shlex.split( self.cmd ))
 		print()
 
 	def process_IN_CREATE( self, event ):
