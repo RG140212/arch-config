@@ -1,0 +1,19 @@
+
+
+# better extract compressed files
+*.tar
+*.tar.gz
+*.zip
+
+# ignore everything inside local directory
+.local/
+
+# python build files and folders
+*.pyc
+.pycache/
+
+# latex temp files
+*.aux
+*.log
+*.out
+*.toc
