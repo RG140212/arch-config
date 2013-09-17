@@ -16,4 +16,3 @@ cp -rf -T ~/.local/bin/ ./bin/
 echo ""
 echo "100% done!"
 echo "Ready to commit now, sir!"
-echo "100% done, sir!"
