@@ -119,6 +119,7 @@ alias gitc='git checkout'
 alias gitdc='git diff --cached'
 alias gitca='git commit --amend'
 alias gitap='git add -p'
+
 function gitpl {
 	git pull origin `git branch | grep \* | sed 's/\* //'`
 }
@@ -131,16 +132,26 @@ alias reboot='sudo reboot'
 alias halt='sudo halt'
 alias poweroff='sudo poweroff'
 
+# cd aliases
+alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
+
 # misc aliases
 alias ct='urxvt &'
 alias django='python manage.py'
 
-# cd aliases
-alias cdoccator="cd ~/Dropbox/Studie/Stage/Occator/"
-
 #------------------------------
 # Useful functions
 #------------------------------
+# sorts and lists all MB and GB sized files in the specified folder
+function diskinventory {
+	du -h $1 | grep -E "^[0-9|\.]*[M|G]" | sort -h
+}
+
+# run mkdir and cd to the newly created directory
+function mkcd {
+	mkdir $1 && cd $_
+}
+
 # open vim using a server name for future reference
 function v {
 	if [ -z $2 ]
