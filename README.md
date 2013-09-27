@@ -10,6 +10,7 @@ Currently I'm running:
 +	GTK 3.0
 	+	Ubuntu font for windows
 	+	Inconsolata font for terminal
+	+	Ubuntu font
 	+	Siva Flat theme
 	+	Faenza icon theme
 	+	Adwaita cursor theme
