@@ -1,6 +1,7 @@
 
 arch-config
 ===========
+__Warning__: This repo is heavily outdated, use the configuration files in my vcsh-* repos instead.
 
 This repo contains my configuration files.
 
